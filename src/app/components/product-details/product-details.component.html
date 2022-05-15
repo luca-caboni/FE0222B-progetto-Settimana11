@@ -1,0 +1,19 @@
+<h1 class="text-center my-4">Dettagli prodotto</h1>
+
+
+        <div *ngIf="product else noData">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title fs-2 text-weight-bold my-3">{{product?.name}}</h5>
+              <p class="card-text fs-4">{{product?.description}}</p>
+              <p class="fs-3 price">{{productPriceQuote}}{{product?.price}} €</p>
+              <a class="btn btn-primary mx-5 p-3" [routerLink]="['/']">Torna indietro</a>
+              <button type="button" class="btn btn-primary my-5 p-3"(click)="addToCart(product!)">Aggiungi al carrello</button>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noData><h5 class="no_data">Caricamento dei dettagli del prodotto...</h5></ng-template>
+
+
+

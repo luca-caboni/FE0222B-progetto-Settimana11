@@ -1,0 +1,23 @@
+.item_cart_name{
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.item_cart_price{
+  font-size: 0.7rem;
+  background-color: rgb(0, 153, 255);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.item_cart_price::after{
+  content: "euro";
+}
+
+
+.name_surname{
+  padding: 2rem;
+
+}

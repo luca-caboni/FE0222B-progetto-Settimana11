@@ -1,0 +1,18 @@
+<h1 class="text-center my-4">Carrello</h1>
+
+<div *ngIf="itemsCart.length>0 else noProducts">
+  <ul class="cart-items" *ngFor="let itemCart of itemsCart">
+    <li><span class="item_cart_name"> {{ itemCart.name }} </span>
+      <span class="item_cart_price"> {{ itemCart.price }} </span>
+      <span><a class="btn btn-danger mx-5 remove_button" (click)="removeProduct(product)">Rimuovi</a></span>
+    </li>
+  </ul>
+  <a class="btn btn-success checkout"[routerLink]="['/checkout']" routerLinkActive="Active">Checkout</a>
+</div>
+
+
+<ng-template #noProducts>
+  <h5 class="no_products">Non ci sono prodotti nel carrello
+    <a class="btn btn-primary backhome"[routerLink]="['/']" routerLinkActive="Active">Torna alla pagina prodotti</a>
+  </h5>
+</ng-template>

@@ -1,0 +1,19 @@
+<h1 class="text-center my-4">Prodotti disponibili</h1>
+
+  <ul *ngIf="products$ | async as products else noData">
+    <div *ngFor="let product of products$ | async">
+      <div class="container">
+        <div class="card text-center my-5">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <a class="btn btn-primary" [routerLink]="['/products', product.id]">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+
+<ng-template #noData>
+  <h5 class="no_data">Caricamento dei prodotti disponibili ...</h5>
+</ng-template>

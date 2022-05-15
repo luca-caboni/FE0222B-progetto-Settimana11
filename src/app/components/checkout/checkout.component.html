@@ -1,0 +1,40 @@
+<h1 class="text-center my-4">Cassa</h1>
+<div class="container w-30">
+  <ul class="cart-items" *ngFor="let itemCart of itemsCart">
+    <li><span class="item_cart_name"> {{ itemCart.name }} </span>
+      <span class="item_cart_price"> {{ itemCart.price }} </span>
+    </li>
+  </ul>
+</div>
+
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="text-center">
+
+  <div class="name_surname text-center">
+    <label for="name" class="mx-5 fs-5">
+      Nome e cognome
+    </label><br>
+    <input id="name" class="p-2" type="text" formControlName="name">
+  </div>
+
+  <div class="city text-center">
+    <label for="city" class="mx-5 fs-5">
+      Città
+    </label><br>
+    <input id="city" class="p-2" type="text" formControlName="city">
+  </div>
+
+  <div class="address text-center">
+    <label for="address" class="mx-5 fs-5">
+      Indirizzo
+    </label><br>
+    <input id="address" class="p-2" type="text" formControlName="address">
+  </div>
+
+    <div class="shipping my-4" *ngFor="let shipping of shippingCosts | async">
+      <label for="shipping" class="mx-5 fs-5">{{shipping.type}}</label>
+      <button type="button" (click)="getChoosenShipping(shipping)">{{shipping.price}}</button></div>
+
+  <button class="btn btn-success p-3 fs-4 my-5" type="submit">Completa l'aquisto</button>
+
+</form>
