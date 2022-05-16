@@ -13,7 +13,6 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  pageTitle = 'Dettagli prodotto';
   productPriceQuote: string = "Può essere tuo a soli: "
   product: Product | undefined
   private sub!: Subscription;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Product, ShippingPrice } from 'src/app/models/product';
-import { map, tap} from 'rxjs/operators';
+import { map} from 'rxjs/operators';
 
 
 
