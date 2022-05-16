@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mx-auto">
         <a class="nav-item nav-link mx-5 fs-4" aria-current="page" [routerLink]="['/']" routerLinkActive="Active" [routerLinkActiveOptions]="{ exact: true }">Prodotti</a>
-        <a class="nav-item nav-link mx-5 fs-4" aria-current="page" [routerLink]="['cart']" routerLinkActive="Active">Carrello</a>
+        <a class="nav-item nav-link mx-5 fs-4" aria-current="page" [routerLink]="['cart']" routerLinkActive="Active">Carrello ({{cartService.count}})</a>
       </div>
     </div>
   </div>
